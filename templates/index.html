@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <style>
+                .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .textarea-box {
+                    margin: 10px;
+                }
+                textarea {
+                    width: 400px;
+                    height: 700px;
+                }
+                .button-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            </style>
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="textarea-box">
+                <textarea id="jsonInput" rows="50" cols="50"></textarea>
+            </div>
+            <div class="button-container">
+                <button onclick="convertJSON()">Convert</button>
+                <button onclick="reverseConvert()">Reverse Convert</button>
+            </div>
+            <div class="textarea-box">
+                <textarea id="jsonOutput" rows="50" cols="50" readonly></textarea>
+            </div>
+        </div>
+
+        <script>
+            function convertJSON() {
+                var inputString = document.getElementById('jsonInput').value;
+                fetch('/convert', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'json_input=' + encodeURIComponent(inputString)
+                })
+                .then(response => response.json())
+                .then(data=> {
+                    if(data.success) {
+                        document.getElementById('jsonOutput').value = data.json_output;
+                    } else {
+                        document.getElementById('jsonOutput').value = 'Error: ' + data.error;
+                    }
+                });
+            }
+
+            function reverseConvert() {
+                var inputString = document.getElementById('jsonInput').value;
+                fetch('/reverse-convert', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'json_input=' + encodeURIComponent(inputString)
+                })
+                .then(response => response.json())
+                .then(data=> {
+                    if(data.success) {
+                        document.getElementById('jsonOutput').value = data.json_output;
+                    } else {
+                        document.getElementById('jsonOutput').value = 'Error: ' + data.error;
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
