@@ -11,7 +11,7 @@ The Flask JSON String Converter is a web application built using the Flask frame
 ## Installation
 To run the application, ensure Python and Flask are installed on your system. If Python is not installed, download and install it from [python.org](https://www.python.org/downloads/). To install Flask, run:
 ```bash
-pip install flask
+pip install -r requirements.txt
 ```
 
 ## Running the Application
