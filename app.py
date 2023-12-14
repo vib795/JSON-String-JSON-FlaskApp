@@ -24,6 +24,9 @@ def convert_json():
         # Strip leading and trailing double quotes if they are extra
         if input_string.startswith('"') and input_string.endswith('"'):
             input_string = input_string[1:-1]
+        
+        # Replace escaped double quotes with actual double quotes
+        input_string = input_string.replace('\\"', '"')
 
         # Convert string to JSON
         json_object = json.loads(input_string)
@@ -65,4 +68,5 @@ def handle_exception(e):
         return jsonify(error="An internal error occurred"), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
+
