@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
+        <title>JSON-String-JSON</title>
             <style>
                 .container {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin: 5%;
                 }
                 .textarea-box {
                     margin: 10px;
@@ -20,20 +21,19 @@
                     flex-direction: column;
                     justify-content: center;
                 }
-            </style>
-        </title>
+            </style>        
     </head>
     <body>
         <div class="container">
             <div class="textarea-box">
-                <textarea id="jsonInput" rows="50" cols="50"></textarea>
+                <textarea id="jsonInput" rows="50" cols="50" placeholder="JSON object/String goes here..."></textarea>
             </div>
             <div class="button-container">
-                <button onclick="convertJSON()">Convert</button>
-                <button onclick="reverseConvert()">Reverse Convert</button>
+                <button onclick="convertJSON()" style="margin:5%">Convert to JSON object</button>
+                <button onclick="reverseConvert()" style="margin:5%">Convert JSON object to String</button>
             </div>
             <div class="textarea-box">
-                <textarea id="jsonOutput" rows="50" cols="50" readonly></textarea>
+                <textarea id="jsonOutput" rows="50" cols="50" readonly placeholder="Output"></textarea>
             </div>
         </div>
 
