@@ -67,6 +67,3 @@ def handle_exception(e):
     else:
         return jsonify(error="An internal error occurred"), 500
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-
