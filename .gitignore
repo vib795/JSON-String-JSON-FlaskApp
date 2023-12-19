@@ -14,3 +14,6 @@ venv/bin/python3.10
 venv/lib64/python3.10
 venv/lib/python3.10
 venv/
+node_modules/@vercel/speed-insights
+node_modules/@vercel
+node_modules/

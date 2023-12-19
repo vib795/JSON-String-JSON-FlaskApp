@@ -38,6 +38,9 @@ For distributing this application as a standalone executable, refer to the docum
 ## Deployment
 To deploy the Flask app on a web server, you can use WSGI servers like Gunicorn or uWSGI. For more details, refer to Flask's deployment documentation: [Flask Deployment Options](https://flask.palletsprojects.com/en/latest/deploying/).
 
+## Live Demo:
+https://json-string-json-flask-app.vercel.app/
+
 ## Notes
 - Ensure your firewall settings allow the application to run and access the required ports.
 - This application is intended for local use. Deploying to the internet requires additional considerations for security and scalability.
